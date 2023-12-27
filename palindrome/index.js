@@ -4,9 +4,31 @@
 // --- Examples:
 //   palindrome("Madam") === true
 //   palindrome("love") === false
+/*
+function palindrome(str) {
+  str = str.toLowerCase(); // this .toLowerCase() method was a good idea to use, but I forgot how and when to use it...
+  /*
+  So I was 90% correct in solving this problem, I just didn't know where to specifically
+  put the .toLowerCase() as I though i could connect it to the methods below: However,
+  my mentor mentioned that assigning str (var) = str.toLowerCase() would be better as
+  it is now defined within the scope of the function.
+  //
+  //
+  const revStr = str.split("").reverse().join("");
+  if (str === revStr) {
+    return true;
+  } else {
+    return false;
+  }
+}
+*/
+// Below is an easier syntatic way to write it, I can also compare the time & space complexity of
+function palindrome(str) {
+  str = str.toLowerCase();
+  return str === str.split("").reverse().join("");
+}
 
-function palindrome(str) {}
-
+// We have a time complexity of O(N) as we go over every character in the string n amount of times to reverse it!
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/
